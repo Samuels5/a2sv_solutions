@@ -1,0 +1,10 @@
+class Solution(object):
+    def sortSentence(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        words = s.split() #spliting
+        words.sort(key=lambda word: word[-1]) #shorting
+        words = [word[:-1] for word in words] # last character removed
+        return ' '.join(words) #joining 
