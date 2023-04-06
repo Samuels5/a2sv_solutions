@@ -1,0 +1,24 @@
+class Solution(object):
+    def rearrangeArray(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        nums.sort() 
+        n = len(nums)
+        rearranged = [0] * n
+        i = 0
+        j = n - 1
+        k = 0
+        while i <= j:
+            if k % 2 == 0:
+                rearranged[k] = nums[j]
+                j -= 1
+            else:
+                rearranged[k] = nums[i]
+                i += 1
+            k += 1
+        return rearranged
+sol = Solution()
+nums = [1,2,3,4,5]
+print(sol.rearrangeArray(nums))
