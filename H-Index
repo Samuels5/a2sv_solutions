@@ -1,0 +1,13 @@
+class Solution(object):
+    def hIndex(self, citations):
+        """
+        :type citations: List[int]
+        :rtype: int
+        """
+        n = len(citations)
+        for i in range(n):
+            max_h = n - i
+            num_papers = sum(1 for c in citations if c >= max_h)
+            if num_papers >= max_h:
+                return max_h
+        return 0
