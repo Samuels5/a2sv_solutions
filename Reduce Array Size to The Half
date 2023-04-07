@@ -1,0 +1,20 @@
+class Solution(object):
+    def minSetSize(self, arr):
+        """
+        :type arr: List[int]
+        :rtype: int
+        """
+        freq = {}
+        for num in arr:
+            freq[num] = freq.get(num, 0) + 1
+        
+        counts = sorted(freq.values(), reverse=True)
+        target = len(arr) / 2
+        removed = 0
+        for count in counts:
+            target -= count
+            removed += 1
+            if target <= 0:
+                break
+        
+        return removed
