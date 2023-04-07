@@ -1,0 +1,15 @@
+class Solution(object):
+    def minIncrementForUnique(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        nums.sort()
+        max_val = -1
+        moves = 0
+        for num in nums:
+            if num <= max_val:
+                moves += (max_val - num + 1)
+                num = max_val + 1
+            max_val = num
+        return moves
