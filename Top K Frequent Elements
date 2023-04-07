@@ -1,0 +1,17 @@
+class Solution(object):
+    def topKFrequent(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: List[int]
+        """
+        freq = {}
+        for num in nums:
+            freq[num] = freq.get(num, 0) + 1
+        
+        freq_list = [(freq[num], num) for num in freq]
+        
+        freq_list.sort(reverse=True)
+        res = [elem for freq, elem in freq_list[:k]]
+        
+        return res
