@@ -1,0 +1,14 @@
+class Solution(object):
+    def minNonZeroProduct(self, p):
+        """
+        :type p: int
+        :rtype: int
+        """
+        MOD = 10**9 + 7
+        n = 2**p - 1
+        max_val = 2**p - 2
+        max_val_mod = pow(max_val, n-1, MOD)
+        n_mod = pow(2, n, MOD) - 1
+        result = (max_val_mod * n_mod) % MOD
+        
+        return result
