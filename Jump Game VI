@@ -1,0 +1,17 @@
+class Solution(object):
+    def maxResult(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
+        n = len(nums)
+        dq = [(0, nums[0])] # (index, score)
+        for i in range(1, n):
+            while dq and dq[0][0] < i - k:
+                dq.pop(0)
+            curr_score = dq[0][1] + nums[i]
+            while dq and dq[-1][1] < curr_score:
+                dq.pop()
+            dq.append((i, curr_score))
+        return dq[-1][1]
