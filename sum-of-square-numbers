@@ -1,0 +1,13 @@
+class Solution:
+    def judgeSquareSum(self, c: int) -> bool:
+        i=0
+        j=int(c**0.5)
+        while i<=j:
+            x=j**2+i**2
+            if x==c:
+                return True
+            elif x>c:
+                j-=1
+            elif x<c:
+                i+=1
+        return False
