@@ -1,0 +1,18 @@
+class Solution:
+    def dividePlayers(self, skill: List[int]) -> int:
+        skill.sort()
+        i=0
+        j=len(skill)-1
+        arr=[]
+        while i<j:
+            arr.append((skill[i],skill[j]))
+            i+=1
+            j-=1
+        sumi=sum(arr[0])
+        for i in arr:
+            if sum(i)!=sumi:
+                return -1
+        col=0
+        for i in arr:
+            col+=i[0]*i[1]
+        return col
