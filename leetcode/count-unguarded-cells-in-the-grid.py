@@ -5,19 +5,6 @@ class Solution:
             matrix[i[0]][i[1]] = 'G'
         for i in walls:
             matrix[i[0]][i[1]] = 'W' 
-        
-        '''
-        matrix = [['G','W','g','g','g','g'],
-                  ['g','G','g','g','W','g'],
-                  ['g','g','W','G','g','g'],
-                  ['g','g','g','g','g','g']]
-        wanted to match the picture
-
-        'G' = Guard
-        'W' = Wall
-        'g' = green, not seen by guard
-        'r' = red, seen by guard
-        '''
 
         count = 0
         for x,y in guards:
