@@ -11,42 +11,6 @@ class Solution:
             sumi=max(sumi,sum(nums[l:r+1]))
         return sumi
 
-                
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        # seen=set()
-        # res=0
-        # i=0
-        # tot=0
-        # for j in range(len(nums)):
-        #     x=nums[j]
-        #     while i < j and x in seen: 
-        #         seen.remove(nums[i])
-        #         tot-=nums[i]
-        #         i+=1                        
-        #     tot+=x
-        #     seen.add(x)
-        #     res=max(res, tot)            
-        # return res
-
 
 
 
