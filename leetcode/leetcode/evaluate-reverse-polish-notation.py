@@ -15,8 +15,5 @@ class Solution:
                     stack.append(a*b)
             else:
                 stack.append(int(val))
-            if stack:
-                print(stack[-1]) 
-            else:
-                continue
+                
         return stack.pop()
