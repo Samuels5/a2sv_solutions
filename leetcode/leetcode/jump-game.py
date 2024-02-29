@@ -5,7 +5,6 @@ class Solution:
         count = 0
         for idx,val in enumerate(nums):
             count = max(count,val)
-            print(count)
             if idx!=len(nums)-1 and count == 0:
                 return False
             count -= 1
